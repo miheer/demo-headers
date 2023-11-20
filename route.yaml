@@ -1,0 +1,43 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: "true"
+  creationTimestamp: "2023-11-20T22:45:09Z"
+  name: myapp-service
+  namespace: demo
+  resourceVersion: "113439"
+  uid: 38fda16e-faa8-4fce-89e6-a486866d2518
+spec:
+  host: myapp-service-demo.apps.misalunk-demo.qe.devcluster.openshift.com
+  httpHeaders:
+    actions:
+      request:
+      - action:
+          set:
+            value: 33.33.33.34
+          type: Set
+        name: X-Forwarded-For
+      response:
+      - action:
+          set:
+            value: /lang/en-us
+          type: Set
+        name: Content-Location
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: myapp-service
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+  - conditions:
+    - lastTransitionTime: "2023-11-20T22:45:09Z"
+      status: "True"
+      type: Admitted
+    host: myapp-service-demo.apps.misalunk-demo.qe.devcluster.openshift.com
+    routerCanonicalHostname: router-default.apps.misalunk-demo.qe.devcluster.openshift.com
+    routerName: default
+    wildcardPolicy: None

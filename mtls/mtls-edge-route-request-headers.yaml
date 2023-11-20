@@ -1,0 +1,43 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: "true"
+  creationTimestamp: "2023-11-27T23:51:28Z"
+  name: myapp-service
+  namespace: demo
+  resourceVersion: "162395"
+  uid: e0b25e8a-d6fe-4d02-b3bd-dfdeafc38382
+spec:
+  host: myapp-service-demo.apps.misalunk-demo.qe.devcluster.openshift.com
+  httpHeaders:
+    actions:
+      request:
+      - action:
+          set:
+            value: '%{+Q}[ssl_c_der,base64]'
+          type: Set
+        name: x-forwarded-client-cert
+      - action:
+          type: Delete
+        name: x-ssl-client-der
+      response: null
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
+  to:
+    kind: Service
+    name: myapp-service
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+  - conditions:
+    - lastTransitionTime: "2023-11-27T23:51:28Z"
+      status: "True"
+      type: Admitted
+    host: myapp-service-demo.apps.misalunk-demo.qe.devcluster.openshift.com
+    routerCanonicalHostname: router-default.apps.misalunk-demo.qe.devcluster.openshift.com
+    routerName: default
+    wildcardPolicy: None

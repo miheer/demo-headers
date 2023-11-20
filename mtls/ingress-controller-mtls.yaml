@@ -1,0 +1,22 @@
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;23r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[23;1H"/tmp/oc-edit-1399780336.yaml" 140L, 4818B[1;1H[34m# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#[m
+[36mapiVersion[m[35m:[m operator.openshift.io/v1
+[36mkind[m[35m:[m IngressController
+[36mmetadata[m[35m:[m
+  [36mcreationTimestamp[m[35m:[m [31m"2023-11-27T21:43:35Z"[m
+  [36mfinalizers[m[35m:[m
+  [38;5;130m- [mingresscontroller.operator.openshift.io/finalizer-ingresscontroller
+  [38;5;130m- [mingresscontroller.operator.openshift.io/finalizer-clientca-configmap
+  [36mgeneration[m[35m:[m [31m6[m
+  [36mname[m[35m:[m default
+  [36mnamespace[m[35m:[m openshift-ingress-operator
+  [36mresourceVersion[m[35m:[m [31m"149587"[m
+  [36muid[m[35m:[m f64bca51-93fb-407c-991e-0404f4eae269
+[36mspec[m[35m:[m
+  [36mclientTLS[m[35m:[m
+    [36mallowedSubjectPatterns[m[35m:[m
+    [38;5;130m- [mlocalhost.localdomain
+    [36mclientCA[m[35m:[m[22;7H[36mname[m[35m:[m router-ca-certs-default[23;101H1,1[11CTop[1;1H[?25h[?4m[?25l[23;91H^Z[1;1H[23;1H
+[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;m
